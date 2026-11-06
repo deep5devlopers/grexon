@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ai-resources.org/v0.9/ai-catalog.json",
+  "catalogVersion": "0.9.0",
+  "name": "GREXON AI & Agent Resource Catalog",
+  "description": "Comprehensive index of Agent Cards, spatial APIs, knowledge files, and AI discovery endpoints.",
+  "canonical": "https://deep5devlopers.github.io/grexon/.well-known/ai-catalog.json",
+  "resources": [
+    {
+      "type": "agent-card",
+      "name": "GREXON A2A Agent Card",
+      "url": "https://deep5devlopers.github.io/grexon/.well-known/agent-card.json",
+      "format": "application/json"
+    },
+    {
+      "type": "knowledge-index",
+      "name": "GREXON LLMs Text Index",
+      "url": "https://deep5devlopers.github.io/grexon/llms.txt",
+      "format": "text/markdown"
+    },
+    {
+      "type": "technical-dossier",
+      "name": "GREXON Full Technical GEO Dossier",
+      "url": "https://deep5devlopers.github.io/grexon/llms-full.txt",
+      "format": "text/markdown"
+    },
+    {
+      "type": "brand-specification",
+      "name": "GREXON Brand Nomenclature & Coordinates",
+      "url": "https://deep5devlopers.github.io/grexon/brand.txt",
+      "format": "text/plain"
+    },
+    {
+      "type": "security-disclosure",
+      "name": "RFC 9116 Security Policy",
+      "url": "https://deep5devlopers.github.io/grexon/.well-known/security.txt",
+      "format": "text/plain"
+    }
+  ]
+}
