@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warehouse Management System — GREXON | Spatial Rack, Bay & Bin Organization</title>
+  <meta name="description" content="Organize racks, bays, shelves, storage bins, products and warehouse operations through a connected digital environment. High-precision volumetric storage tracking with ERP synchronization.">
+  <meta name="keywords" content="Warehouse Management System, rack management, storage location management, warehouse operations, bin tracking, volumetric slotting, WMS spatial twin">
+  <meta name="author" content="GREXON Systems">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://deep5devlopers.github.io/grexon/warehouse-management.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://deep5devlopers.github.io/grexon/warehouse-management.html">
+  <meta property="og:title" content="GREXON Warehouse Management System — Manage your warehouse with greater clarity.">
+  <meta property="og:description" content="Organize racks, bays, shelves, storage bins, products and warehouse operations through a connected digital environment.">
+  <meta property="og:image" content="https://deep5devlopers.github.io/grexon/assets/logo.png">
+  <meta property="og:site_name" content="GREXON">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://deep5devlopers.github.io/grexon/warehouse-management.html">
+  <meta name="twitter:title" content="Warehouse Management System — GREXON">
+  <meta name="twitter:description" content="Organize racks, bays, shelves, storage bins, products and warehouse operations with spatial precision.">
+  <meta name="twitter:image" content="https://deep5devlopers.github.io/grexon/assets/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link rel="apple-touch-icon" href="./assets/logo.png">
+
+  <!-- Fonts & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://deep5devlopers.github.io/grexon/warehouse-management.html#software",
+        "name": "GREXON Warehouse Management System",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All modern browsers, Android handhelds, iOS",
+        "description": "Spatial warehouse management system organizing racks, bays, shelves, storage bins, and products with real-time volumetric analytics and ERP integration.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://deep5devlopers.github.io/grexon/warehouse-management.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://deep5devlopers.github.io/grexon/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Warehouse Management",
+            "item": "https://deep5devlopers.github.io/grexon/warehouse-management.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://deep5devlopers.github.io/grexon/warehouse-management.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does GREXON organize warehouse racks, bays, and storage bins?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GREXON structures warehouse storage into a strict spatial hierarchy: Facility, Zone, Aisle, Rack, Bay, Shelf, and Storage Bin. Each bin is assigned specific physical dimensions (length, width, height, maximum weight) and metric XYZ coordinates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is dynamic slotting optimization in GREXON?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dynamic slotting evaluates product velocity (fast, medium, slow-moving SKUs) and automatically recommends relocation of high-velocity items to accessible lower-tier bays near packing docks, cutting order picking travel times."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .glow-eye {
+      filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.5));
+    }
+  </style>
+</head>
+<body class="bg-[#080C14] text-slate-200 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[#080C14]/90 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">
+        <div class="w-11 h-11 rounded-full overflow-hidden bg-black border border-blue-500/40 p-0.5 flex items-center justify-center shadow-lg shadow-blue-950/40 group-hover:border-blue-400 transition-colors">
+          <img src="./assets/logo.png" alt="GREXON Circular Eye Logo" class="w-full h-full object-cover rounded-full glow-eye" width="44" height="44">
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-wider text-white font-mono flex items-center gap-1.5">
+            GREXON
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+          </span>
+          <span class="block text-[10px] tracking-widest uppercase font-mono text-slate-400">Spatial Intelligence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium" aria-label="Main Navigation">
+        <a href="./index.html" class="px-3.5 py-2 text-slate-300 hover:text-white hover:bg-slate-900/60 rounded-sm font-mono text-xs uppercase tracking-wider transition-colors">Home</a>
+        <a href="./about.html" class="px-3.5 py-2 text-slate-300 hover:text-white hover:bg-slate-900/60 rounded-sm font-mono text-xs uppercase tracking-wider transition-colors">About</a>
+        <a href="./warehouse-management.html" class="px-3.5 py-2 text-white bg-slate-900 border border-blue-500/40 rounded-sm font-mono text-xs uppercase tracking-wider" aria-current="page">Warehouse Management</a>
+        <a href="./indoor-navigation.html" class="px-3.5 py-2 text-slate-300 hover:text-white hover:bg-slate-900/60 rounded-sm font-mono text-xs uppercase tracking-wider transition-colors">Indoor Navigation</a>
+        <a href="./warehouse-mapping.html" class="px-3.5 py-2 text-slate-300 hover:text-white hover:bg-slate-900/60 rounded-sm font-mono text-xs uppercase tracking-wider transition-colors">Warehouse Mapping</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="#storage-simulator" class="px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 border border-blue-400/40 rounded-sm shadow-md transition-all">
+          Slotting Simulator
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" type="button" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-[#080C14] px-4 pt-3 pb-6 space-y-2">
+      <a href="./index.html" class="block px-3 py-2 text-sm font-mono text-slate-300 hover:text-white hover:bg-slate-900 rounded">01. Home</a>
+      <a href="./about.html" class="block px-3 py-2 text-sm font-mono text-slate-300 hover:text-white hover:bg-slate-900 rounded">02. About Platform</a>
+      <a href="./warehouse-management.html" class="block px-3 py-2 text-sm font-mono text-blue-400 bg-slate-900 rounded">03. Warehouse Management</a>
+      <a href="./indoor-navigation.html" class="block px-3 py-2 text-sm font-mono text-slate-300 hover:text-white hover:bg-slate-900 rounded">04. Indoor Navigation</a>
+      <a href="./warehouse-mapping.html" class="block px-3 py-2 text-sm font-mono text-slate-300 hover:text-white hover:bg-slate-900 rounded">05. Warehouse Mapping</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumbs -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <nav class="flex text-xs font-mono text-slate-400 gap-2" aria-label="Breadcrumbs">
+        <a href="./index.html" class="hover:text-blue-400">Home</a>
+        <span>/</span>
+        <span class="text-white">Warehouse Management</span>
+      </nav>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="py-16 lg:py-24 bg-grid-pattern border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-900 border border-blue-500/30 rounded-sm text-xs font-mono text-blue-400">
+            <span>CORE CAPABILITY · KEYWORD: WAREHOUSE MANAGEMENT SYSTEM</span>
+          </div>
+
+          <!-- Exact H1 Requirement -->
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Manage your warehouse with greater clarity.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed">
+            Organize racks, bays, shelves, storage bins, products and warehouse operations through a connected digital environment.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#storage-simulator" class="px-6 py-3 text-xs font-mono font-semibold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 rounded-sm">
+              Launch Capacity Sandbox
+            </a>
+            <a href="./indoor-navigation.html" class="px-6 py-3 text-xs font-mono font-semibold uppercase tracking-wider text-slate-300 hover:text-white bg-slate-900 border border-slate-700 rounded-sm">
+              Pair with Indoor Navigation
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CORE CAPABILITIES GRID -->
+    <section class="py-20 bg-[#090D18] border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Granular Storage Control</span>
+          <h2 class="text-3xl font-extrabold text-white">
+            From Facility Boundaries to Individual Storage Bins
+          </h2>
+          <p class="text-slate-400 text-sm">
+            Continuous geometric modeling eliminates blind spots in physical storage capacity and inventory placement.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg space-y-3">
+            <span class="text-xs font-mono text-blue-400 uppercase font-semibold">01. Racks & Bays</span>
+            <h3 class="text-lg font-bold text-white">Structural Beam Tolerances</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Define upright profiles, beam elevations, bay depths, and maximum safe working load (SWL) capacities for pallet and cantilever racks.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg space-y-3">
+            <span class="text-xs font-mono text-blue-400 uppercase font-semibold">02. Bins & Shelves</span>
+            <h3 class="text-lg font-bold text-white">Volumetric Cubing</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Automated cubic capacity tracking prevents bin overflow, calculating real-time percentage fill across length, width, and height.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg space-y-3">
+            <span class="text-xs font-mono text-blue-400 uppercase font-semibold">03. Dynamic Slotting</span>
+            <h3 class="text-lg font-bold text-white">Velocity Class Balancing</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Automatically identifies high-frequency pick items and recommends slotting reallocations closer to dock packing corridors.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg space-y-3">
+            <span class="text-xs font-mono text-blue-400 uppercase font-semibold">04. ERP Integration</span>
+            <h3 class="text-lg font-bold text-white">Sub-Second Sync</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Bi-directional connectors for SAP EWM, Oracle NetSuite, and Manhattan Associates guarantee inventory count and location integrity.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE STORAGE SIMULATOR -->
+    <section id="storage-simulator" class="py-20 bg-[#080C14] border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Interactive Slotting Matrix</span>
+            <h2 class="text-3xl font-extrabold text-white tracking-tight mt-1">
+              Rack Bay Volumetric Capacity Simulator
+            </h2>
+            <p class="text-slate-400 text-sm mt-1">
+              Select rack levels and adjust SKU package dimensions to test volumetric fill rate calculations.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-slate-950 border border-slate-800 rounded-lg p-6">
+          
+          <!-- Bay Visualizer -->
+          <div class="lg:col-span-7 bg-[#0B111E] border border-slate-800/80 rounded p-6 flex flex-col justify-between">
+            <div class="flex justify-between items-center text-xs font-mono border-b border-slate-800 pb-3 mb-4">
+              <span class="text-white font-semibold">BAY ELEVATION: BAY-A04-12</span>
+              <span class="text-blue-400">STANDARD 4-SHELF SELECTIVE RACK</span>
+            </div>
+
+            <!-- 4 Shelf Rack Illustration -->
+            <div class="space-y-3 my-2" id="rackBayGraphic">
+              <!-- Shelf 4 (Top) -->
+              <div class="p-3 bg-slate-900/90 border border-slate-700 rounded flex items-center justify-between font-mono text-xs hover:border-blue-500 cursor-pointer shelf-row" data-shelf="Level 4 (Slow Velocity)" data-cap="34%">
+                <span class="text-slate-300">SHELF 04 [SLOW VELOCITY]</span>
+                <span class="text-slate-400">1200 x 1000 x 1400mm</span>
+                <span class="text-emerald-400 font-bold">34% Utilized</span>
+              </div>
+              <!-- Shelf 3 -->
+              <div class="p-3 bg-slate-900/90 border border-slate-700 rounded flex items-center justify-between font-mono text-xs hover:border-blue-500 cursor-pointer shelf-row" data-shelf="Level 3 (Medium Velocity)" data-cap="68%">
+                <span class="text-slate-300">SHELF 03 [MEDIUM VELOCITY]</span>
+                <span class="text-slate-400">1200 x 1000 x 1400mm</span>
+                <span class="text-blue-400 font-bold">68% Utilized</span>
+              </div>
+              <!-- Shelf 2 -->
+              <div class="p-3 bg-blue-950/40 border border-blue-500/60 rounded flex items-center justify-between font-mono text-xs hover:border-blue-400 cursor-pointer shelf-row active-shelf" data-shelf="Level 2 (High Velocity - Golden Zone)" data-cap="92%">
+                <span class="text-blue-200 font-bold">SHELF 02 [GOLDEN PICK ZONE]</span>
+                <span class="text-blue-300">1200 x 1000 x 1600mm</span>
+                <span class="text-amber-400 font-bold">92% Utilized</span>
+              </div>
+              <!-- Shelf 1 (Bottom) -->
+              <div class="p-3 bg-slate-900/90 border border-slate-700 rounded flex items-center justify-between font-mono text-xs hover:border-blue-500 cursor-pointer shelf-row" data-shelf="Level 1 (Heavy Pallets)" data-cap="85%">
+                <span class="text-slate-300">SHELF 01 [HEAVY BULK BASE]</span>
+                <span class="text-slate-400">1200 x 1000 x 1800mm</span>
+                <span class="text-blue-400 font-bold">85% Utilized</span>
+              </div>
+            </div>
+
+            <div class="text-[11px] font-mono text-slate-500 pt-3 border-t border-slate-800 flex justify-between">
+              <span>RATED BEAM CAPACITY: 2,500 KG / LEVEL</span>
+              <span class="text-emerald-400">STRUCTURAL FACTOR: 1.6 SAFE</span>
+            </div>
+          </div>
+
+          <!-- Controls & Readout -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+            <div class="space-y-4">
+              <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block">Selected Shelf Metrics</span>
+              
+              <div class="p-4 bg-slate-900 border border-slate-800 rounded space-y-3">
+                <div class="text-sm font-mono text-white font-bold" id="selectedShelfTitle">
+                  Level 2 (High Velocity - Golden Zone)
+                </div>
+                <div class="space-y-1.5 text-xs font-mono">
+                  <div class="flex justify-between text-slate-400">
+                    <span>Volumetric Fill:</span>
+                    <span class="text-blue-400 font-semibold" id="fillRateText">92.0% (1.76 m³)</span>
+                  </div>
+                  <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                    <div id="fillBar" class="h-full bg-blue-500 w-[92%]"></div>
+                  </div>
+                </div>
+                <div class="flex justify-between text-xs font-mono text-slate-400 pt-2 border-t border-slate-800">
+                  <span>Current Weight:</span>
+                  <span class="text-white">1,840 kg / 2,500 kg</span>
+                </div>
+                <div class="flex justify-between text-xs font-mono text-slate-400">
+                  <span>Pick Velocity Score:</span>
+                  <span class="text-amber-400">Class A (Top 10% Turns)</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-slate-900 border border-slate-800 rounded space-y-2 text-xs font-mono text-slate-400">
+                <span class="text-white font-semibold">Slotting Recommendation:</span>
+                <p>Maintain fast-moving automotive parts in Shelf 02 Golden Zone to sustain pick path efficiency under 18 seconds.</p>
+              </div>
+            </div>
+
+            <button class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs uppercase font-semibold tracking-wider rounded-sm transition-all" onclick="alert('Slotting recalculation complete. ERP manifest updated.')">
+              Execute Velocity Rebalancing
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-[#090D18]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <h2 class="text-2xl font-extrabold text-white text-center">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="p-5 bg-slate-900/80 border border-slate-800 rounded-lg">
+            <h3 class="text-sm font-bold text-white mb-1.5">How does GREXON organize warehouse racks, bays, and storage bins?</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              GREXON structures warehouse storage into a strict spatial hierarchy: Facility, Zone, Aisle, Rack, Bay, Shelf, and Storage Bin. Each bin is assigned specific physical dimensions and metric XYZ coordinates.
+            </p>
+          </div>
+          <div class="p-5 bg-slate-900/80 border border-slate-800 rounded-lg">
+            <h3 class="text-sm font-bold text-white mb-1.5">What is dynamic slotting optimization in GREXON?</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Dynamic slotting evaluates product velocity and automatically recommends relocation of high-velocity items to accessible lower-tier bays near packing docks, cutting order picking travel times.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#05080E] border-t border-slate-800/80 text-slate-400 text-xs font-mono py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5">
+            <img src="./assets/logo.png" alt="GREXON Logo" class="w-7 h-7 rounded-full border border-blue-500/40 glow-eye" width="28" height="28">
+            <span class="text-white font-bold text-sm tracking-wider">GREXON</span>
+          </div>
+          <p class="text-slate-400 text-xs font-sans leading-relaxed">
+            Your warehouse. Get answers back. Positioning: Intelligent Warehouse Management, Digital Mapping & Indoor Navigation.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <span class="text-white font-semibold uppercase tracking-wider text-[11px]">Pages</span>
+          <ul class="space-y-1.5 text-slate-400">
+            <li><a href="./index.html" class="hover:text-white">01. Home</a></li>
+            <li><a href="./about.html" class="hover:text-white">02. About Platform</a></li>
+            <li><a href="./warehouse-management.html" class="text-blue-400">03. Warehouse Management</a></li>
+            <li><a href="./indoor-navigation.html" class="hover:text-white">04. Indoor Navigation</a></li>
+            <li><a href="./warehouse-mapping.html" class="hover:text-white">05. Warehouse Mapping</a></li>
+          </ul>
+        </div>
+        <div class="space-y-2">
+          <span class="text-white font-semibold uppercase tracking-wider text-[11px]">SEO Directives</span>
+          <ul class="space-y-1.5 text-slate-400">
+            <li><a href="./robots.txt" class="hover:text-blue-400">/robots.txt</a></li>
+            <li><a href="./sitemap.xml" class="hover:text-blue-400">/sitemap.xml</a></li>
+            <li><a href="./llms.txt" class="hover:text-blue-400">/llms.txt</a></li>
+            <li><a href="./llms-full.txt" class="hover:text-blue-400">/llms-full.txt</a></li>
+            <li><a href="./404.html" class="hover:text-blue-400">/404.html</a></li>
+          </ul>
+        </div>
+        <div class="space-y-2">
+          <span class="text-white font-semibold uppercase tracking-wider text-[11px]">Zero Floor Hierarchy</span>
+          <p class="text-[11px] text-slate-400 leading-relaxed font-sans">
+            Continuous Cartesian local origin with metric millimeter precision. Single-elevation industrial warehouse geometry.
+          </p>
+        </div>
+      </div>
+      <div class="pt-6 text-[11px] text-slate-500">
+        &copy; 2026 GREXON Systems · Target Keyword: Warehouse Management System
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Shelf interactivity
+    const shelfRows = document.querySelectorAll('.shelf-row');
+    const titleEl = document.getElementById('selectedShelfTitle');
+    const fillRateText = document.getElementById('fillRateText');
+    const fillBar = document.getElementById('fillBar');
+
+    shelfRows.forEach(row => {
+      row.addEventListener('click', () => {
+        shelfRows.forEach(r => {
+          r.classList.remove('bg-blue-950/40', 'border-blue-500/60');
+          r.classList.add('bg-slate-900/90', 'border-slate-700');
+        });
+        row.classList.remove('bg-slate-900/90', 'border-slate-700');
+        row.classList.add('bg-blue-950/40', 'border-blue-500/60');
+
+        const shelf = row.getAttribute('data-shelf');
+        const cap = row.getAttribute('data-cap');
+        titleEl.textContent = shelf;
+        fillRateText.textContent = `${cap} Volumetric Utilization`;
+        fillBar.style.width = cap;
+      });
+    });
+  </script>
+</body>
+</html>
+<!-- 2026 Deep Systems Architectural Update :: GREXON Platform -->
