@@ -1,0 +1,11 @@
+/* TEAM */
+Engineering: Deep Sanchaniya (Deep · deep5)
+Contact: deep5devlopers@gmail.com
+GitHub: https://github.com/deep5devlopers
+Brand: GREXON Systems
+
+/* SITE */
+Standards: HTML5, CSS3, Tailwind CSS, Schema.org JSON-LD, RFC 9116
+Architecture: 2026 Deep Systems Continuous Spatial Geometry
+Components: Single-elevation Continuous Navmesh (Zero Floor Selectors)
+Software: CAD-to-Vector Parser, A* Spatial Pathfinding, Volumetric Slotting
