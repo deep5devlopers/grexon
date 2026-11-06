@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Coordinate Not Located | GREXON Spatial Intelligence</title>
+  <meta name="description" content="The requested warehouse coordinate or URL does not exist in GREXON's spatial graph. Explore our connected warehouse management, indoor navigation, and CAD mapping modules.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#080C14] text-slate-200 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Minimal Header -->
+  <header class="border-b border-slate-800 bg-[#080C14]/90 px-6 py-4 flex items-center justify-between">
+    <a href="./index.html" class="flex items-center gap-3">
+      <img src="./assets/logo.png" alt="GREXON Logo" class="w-8 h-8 rounded-full border border-blue-500/40" width="32" height="32">
+      <span class="font-mono text-white font-bold tracking-wider">GREXON</span>
+    </a>
+    <a href="./index.html" class="text-xs font-mono text-blue-400 hover:text-blue-300">
+      &larr; Return to Facility Home
+    </a>
+  </header>
+
+  <!-- Main Error Card -->
+  <main class="max-w-xl mx-auto px-4 py-16 text-center space-y-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 bg-rose-950/40 border border-rose-500/40 rounded-sm text-xs font-mono text-rose-300">
+      <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+      <span>ERROR CODE 404: SPATIAL COORDINATE UNMAPPED</span>
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-mono">
+      404 // Not Found
+    </h1>
+
+    <p class="text-slate-400 text-sm leading-relaxed">
+      The requested URI does not resolve to an active spatial node, aisle vector, or warehouse document in the GREXON coordinate index.
+    </p>
+
+    <!-- Quick Navigation Module List -->
+    <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-6 text-left space-y-3 font-mono text-xs">
+      <span class="text-slate-400 block uppercase tracking-wider text-[10px]">Navigate to Verified Modules</span>
+      <div class="space-y-2">
+        <a href="./index.html" class="block p-2.5 bg-slate-950 hover:bg-blue-950/40 border border-slate-800 hover:border-blue-500 rounded text-slate-200 hover:text-blue-300 transition-colors">
+          &rarr; 01. Home (Platform Overview)
+        </a>
+        <a href="./about.html" class="block p-2.5 bg-slate-950 hover:bg-blue-950/40 border border-slate-800 hover:border-blue-500 rounded text-slate-200 hover:text-blue-300 transition-colors">
+          &rarr; 02. About (Spatial Philosophy & Engineering)
+        </a>
+        <a href="./warehouse-management.html" class="block p-2.5 bg-slate-950 hover:bg-blue-950/40 border border-slate-800 hover:border-blue-500 rounded text-slate-200 hover:text-blue-300 transition-colors">
+          &rarr; 03. Warehouse Management (Rack & Bin System)
+        </a>
+        <a href="./indoor-navigation.html" class="block p-2.5 bg-slate-950 hover:bg-blue-950/40 border border-slate-800 hover:border-blue-500 rounded text-slate-200 hover:text-blue-300 transition-colors">
+          &rarr; 04. Indoor Navigation (Obstacle-Aware Routing)
+        </a>
+        <a href="./warehouse-mapping.html" class="block p-2.5 bg-slate-950 hover:bg-blue-950/40 border border-slate-800 hover:border-blue-500 rounded text-slate-200 hover:text-blue-300 transition-colors">
+          &rarr; 05. Warehouse Mapping (CAD Vector Ingestion)
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="border-t border-slate-800 py-6 text-center text-xs font-mono text-slate-500">
+    &copy; 2026 GREXON Systems · 2026 Deep Systems Architectural Standards
+  </footer>
+
+</body>
+</html>
+<!-- 2026 Deep Systems Architectural Update :: GREXON Platform -->
