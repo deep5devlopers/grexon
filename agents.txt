@@ -1,0 +1,12 @@
+# ==============================================================================
+# GREXON — Plaintext Agent Discovery Index (agents.txt)
+# Canonical Host: https://deep5devlopers.github.io/grexon/
+# ==============================================================================
+
+Agent-Card: https://deep5devlopers.github.io/grexon/.well-known/agent-card.json
+Agent-Alias: https://deep5devlopers.github.io/grexon/.well-known/agent.json
+AI-Catalog: https://deep5devlopers.github.io/grexon/.well-known/ai-catalog.json
+Brand-Specification: https://deep5devlopers.github.io/grexon/brand.txt
+Knowledge-Index: https://deep5devlopers.github.io/grexon/llms.txt
+Full-Dossier: https://deep5devlopers.github.io/grexon/llms-full.txt
+Security-Policy: https://deep5devlopers.github.io/grexon/.well-known/security.txt
