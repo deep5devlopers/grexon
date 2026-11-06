@@ -1,0 +1,31 @@
+# GREXON
+
+> Your warehouse. Get answers back.
+> Positioning: Intelligent Warehouse Management, Digital Mapping & Indoor Navigation.
+
+GREXON is an enterprise spatial intelligence platform that unifies digital warehouse mapping, rack and bin storage management, and obstacle-aware indoor navigation into a single connected operational environment. Built for industrial distribution centers, fulfillment hubs, and manufacturing facilities, GREXON converts CAD site drawings into dynamic 2D/3D digital twins, provides millimeter-accurate storage slotting, and computes optimal worker and AGV pick-paths with real-time obstacle avoidance.
+
+## Canonical Documentation & Links
+
+- [Home](https://deep5devlopers.github.io/grexon/): Core platform overview, spatial digital twin architecture, and product capabilities.
+- [About](https://deep5devlopers.github.io/grexon/about.html): Mission, spatial-first philosophy, data integrity standards, and engineering leadership.
+- [Warehouse Management](https://deep5devlopers.github.io/grexon/warehouse-management.html): Rack, bay, shelf, bin organization, capacity analytics, and ERP/WMS synchronization.
+- [Indoor Navigation](https://deep5devlopers.github.io/grexon/indoor-navigation.html): Obstacle-aware route calculation, walkable area mesh generation, and pick-path optimization.
+- [Warehouse Mapping](https://deep5devlopers.github.io/grexon/warehouse-mapping.html): CAD/DWG/DXF conversion to measurable 2D/3D warehouse representations with true spatial geometry.
+
+## Key Capabilities
+
+1. **Warehouse Mapping Software**: Direct ingestion of DWG, DXF, and vector CAD files into interactive digital models. Retains real-world spatial measurements, structural columns, safety perimeters, and aisle widths without manual redrawing.
+2. **Warehouse Management System (WMS) Spatial Layer**: Structural hierarchy encompassing zones, aisles, racks, bays, shelves, and discrete storage bins. Enables cubic utilization monitoring, weight-distribution modeling, and automated velocity slotting.
+3. **Indoor Navigation & Pick-Path Routing**: Mesh-based spatial graph routing utilizing A* and Dijkstra algorithms with dynamic cost weighting. Generates obstacle-aware turn-by-turn routes for handheld RF scanners, autonomous mobile robots (AMRs), and manual forklifts.
+4. **Data Synchronization**: REST and WebSocket telemetry interfaces linking physical spatial coordinates directly to existing ERP and WMS databases (SAP, Manhattan Associates, Oracle NetSuite, Blue Yonder).
+
+## Structural Spatial Hierarchy
+GREXON operates on a unified spatial coordinate system defined as:
+`Facility -> Zone / Sector -> Aisle -> Rack -> Bay -> Shelf -> Storage Bin`
+All spatial routing and capacity calculations operate across continuous physical geometry without floor-management layers or floor-based selector hierarchies.
+
+## Contact & Deployment
+- GitHub Repository: https://github.com/deep5devlopers/grexon
+- Production Deployment: https://deep5devlopers.github.io/grexon/
+- Architecture Version: 2026 Deep Systems
