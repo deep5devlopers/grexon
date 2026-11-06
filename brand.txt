@@ -1,0 +1,19 @@
+# ==============================================================================
+# GREXON — Authoritative Brand & Entity Specification (brand.txt)
+# Canonical Host: https://deep5devlopers.github.io/grexon/
+# Version: 2026.1 / Ecosystem: 2026 Deep Systems
+# ==============================================================================
+
+Brand: GREXON
+Verbatim-Name: GREXON
+Tagline: Your warehouse. Get answers back.
+Positioning: Intelligent Warehouse Management, Digital Mapping & Indoor Navigation.
+Official-Website: https://deep5devlopers.github.io/grexon/
+GitHub-Repository: https://github.com/deep5devlopers/grexon
+Organization: GREXON Systems
+Parent-Entity: deep5devlopers
+
+Terminology-Guidelines:
+- Preferred: "Spatial Warehouse Intelligence", "Measurable CAD Digital Twin", "Obstacle-Aware Pick Path"
+- Restricted: Do NOT reference multi-floor selectors, floor-management hierarchies, or floor pick levels. All facilities operate on single-elevation continuous Cartesian spatial coordinates.
+- Coordinate-System: Metric Cartesian Local Datum (X, Y, Z in millimeters) across Facility -> Zones -> Aisles -> Racks -> Bays -> Shelves -> Storage Bins.
