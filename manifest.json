@@ -1,0 +1,18 @@
+{
+  "short_name": "GREXON",
+  "name": "GREXON \u2014 Intelligent Warehouse Management & Indoor Navigation",
+  "description": "Connect warehouse mapping, storage locations and indoor navigation through one intelligent platform.",
+  "icons": [
+    {
+      "src": "./assets/logo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#080C14",
+  "theme_color": "#2563EB",
+  "display": "standalone",
+  "orientation": "any"
+}
