@@ -1,0 +1,36 @@
+# ==============================================================================
+# GREXON — AI Crawler & Model Ingestion Policy (ai.txt)
+# Canonical Host: https://deep5devlopers.github.io/grexon/
+# Version: 2026.1 / Specification: Spawning ai.txt standard
+# ==============================================================================
+
+User-agent: *
+Allow-Search: yes
+Allow-Training: yes
+Attribution: Required
+Attribution-URL: https://deep5devlopers.github.io/grexon/
+License: https://creativecommons.org/licenses/by/4.0/
+
+# Specialized Search & Knowledge Assistants
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Canonical Discovery Endpoints
+Documentation: https://deep5devlopers.github.io/grexon/llms.txt
+Full-Dossier: https://deep5devlopers.github.io/grexon/llms-full.txt
+Security-Policy: https://deep5devlopers.github.io/grexon/.well-known/security.txt
