@@ -20,6 +20,12 @@ Allow: /.well-known/security.txt
 Allow: /manifest.json
 Allow: /humans.txt
 Allow: /assets/
+Allow: /brand.txt
+Allow: /agents.txt
+Allow: /.well-known/agent-card.json
+Allow: /.well-known/agent.json
+Allow: /.well-known/ai-catalog.json
+Allow: /AGENTS.md
 
 # Search Generative & Answer Engine Optimization (SGO / AEO / GEO / AIO)
 User-agent: Googlebot
