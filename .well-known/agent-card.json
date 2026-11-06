@@ -1,0 +1,93 @@
+{
+  "$schema": "https://a2a.dev/v1/agent-card.json",
+  "protocolVersion": "1.0.0",
+  "agent": {
+    "id": "grexon-spatial-agent",
+    "name": "GREXON Spatial Intelligence Agent",
+    "description": "Autonomous warehouse spatial operator providing coordinate queries, obstacle-aware route calculations, and CAD vector ingestion.",
+    "url": "https://deep5devlopers.github.io/grexon/",
+    "version": "2026.1.0",
+    "provider": {
+      "name": "GREXON Systems",
+      "url": "https://github.com/deep5devlopers"
+    }
+  },
+  "capabilities": {
+    "inputModes": [
+      "application/json",
+      "text/plain"
+    ],
+    "outputModes": [
+      "application/json",
+      "text/markdown"
+    ]
+  },
+  "skills": [
+    {
+      "id": "spatial-coordinate-query",
+      "name": "Spatial Coordinate Query",
+      "description": "Resolve real-world Cartesian metric coordinates (X, Y, Z mm) for any warehouse rack, bay, shelf, or storage bin.",
+      "endpoint": "https://deep5devlopers.github.io/grexon/warehouse-management.html",
+      "method": "GET",
+      "parameters": {
+        "zoneId": {
+          "type": "string",
+          "description": "Target zone code (e.g. ZONE-A)"
+        },
+        "rackId": {
+          "type": "string",
+          "description": "Target rack identifier (e.g. RACK-B04)"
+        },
+        "binId": {
+          "type": "string",
+          "description": "Target storage bin SKU coordinate"
+        }
+      }
+    },
+    {
+      "id": "obstacle-aware-route-optimizer",
+      "name": "Obstacle-Aware Pick-Path Optimizer",
+      "description": "Calculate shortest obstacle-free pick path across warehouse aisles using weighted A* and Traveling Salesperson sequencing.",
+      "endpoint": "https://deep5devlopers.github.io/grexon/indoor-navigation.html",
+      "method": "GET",
+      "parameters": {
+        "startDock": {
+          "type": "string",
+          "description": "Starting loading dock code"
+        },
+        "pickItemBins": {
+          "type": "array",
+          "description": "Array of target storage bin IDs"
+        },
+        "activeObstacles": {
+          "type": "array",
+          "description": "Dynamic exclusion coordinates"
+        }
+      }
+    },
+    {
+      "id": "cad-vector-ingest",
+      "name": "CAD Blueprint Vector Ingestion",
+      "description": "Vectorize and parse architectural CAD drawings (DWG, DXF) into measurable 2D and 3D warehouse spatial meshes.",
+      "endpoint": "https://deep5devlopers.github.io/grexon/warehouse-mapping.html",
+      "method": "GET",
+      "parameters": {
+        "fileFormat": {
+          "type": "string",
+          "enum": [
+            "DWG",
+            "DXF",
+            "SVG"
+          ]
+        },
+        "scaleDatum": {
+          "type": "string",
+          "description": "Metric scale calibration factor"
+        }
+      }
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  }
+}
