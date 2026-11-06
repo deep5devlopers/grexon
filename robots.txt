@@ -2,7 +2,7 @@
 # GREXON — Robots.txt Directives
 # Intelligent Warehouse Management, Digital Mapping & Indoor Navigation
 # Canonical Host: https://deep5devlopers.github.io/grexon/
-# Updated: 2026-11-06T10:15:00Z
+# Updated: 2026-11-06T10:35:00Z
 # ==============================================================================
 
 User-agent: *
@@ -15,6 +15,10 @@ Allow: /warehouse-mapping.html
 Allow: /sitemap.xml
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /ai.txt
+Allow: /.well-known/security.txt
+Allow: /manifest.json
+Allow: /humans.txt
 Allow: /assets/
 
 # Search Generative & Answer Engine Optimization (SGO / AEO / GEO / AIO)
@@ -34,6 +38,9 @@ User-agent: YandexBot
 Allow: /
 
 # AI Crawlers & LLM Ingestion Crawlers
+User-agent: Google-Extended
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -55,5 +62,5 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# Sitemap Declarations
+# Canonical Discovery Directives
 Sitemap: https://deep5devlopers.github.io/grexon/sitemap.xml
