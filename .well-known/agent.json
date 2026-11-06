@@ -1,0 +1,6 @@
+{
+  "$schema": "https://a2a.dev/v1/agent.json",
+  "canonicalCard": "https://deep5devlopers.github.io/grexon/.well-known/agent-card.json",
+  "name": "GREXON Spatial Intelligence Agent",
+  "version": "2026.1.0"
+}
