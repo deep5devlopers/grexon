@@ -1,0 +1,84 @@
+# GREXON — Comprehensive Technical & Architectural Documentation
+
+**Brand:** GREXON  
+**Tagline:** Your warehouse. Get answers back.  
+**Positioning:** Intelligent Warehouse Management, Digital Mapping & Indoor Navigation.  
+**Canonical Domain:** https://deep5devlopers.github.io/grexon/  
+**Release Version:** 2026.1 Enterprise Release  
+
+---
+
+## 1. System Overview
+
+GREXON is an enterprise spatial intelligence and warehouse operations platform designed to bridge physical warehouse layouts with enterprise resource software. By ingesting Computer-Aided Design (CAD) files, GREXON synthesizes a live, millimeter-precise spatial graph of the warehouse floor. Within this single connected environment, logistics operators, facility managers, order pickers, and autonomous mobile robots (AMRs) query exact bin locations, execute shortest obstacle-free pick paths, and analyze storage density.
+
+GREXON adheres strictly to a continuous spatial coordinate model:
+`Facility World Coordinates (X, Y, Z) -> Functional Zones -> Aisles -> Racks -> Bays -> Shelves -> Storage Bins`
+GREXON explicitly omits floor-management features, floor selectors, and floor-based hierarchy from its architecture, ensuring unbroken horizontal spatial routing and unified single-elevation coordinate calculation across industrial warehouse facilities.
+
+---
+
+## 2. Core Functional Modules
+
+### Module A: Warehouse Mapping (`/warehouse-mapping.html`)
+- **Primary Keyword:** Warehouse Mapping Software
+- **CAD Ingestion Engine:** Parses standard DXF (Drawing Exchange Format), DWG, and vector SVG architectural blueprints. Automatically extracts layer metadata, structural column offsets, fire exits, perimeter walls, and loading bay docks.
+- **Real Spatial Geometry:** Generates true-scale 2D polygon vectors and 3D wireframe meshes with georeferenced coordinate bounding boxes.
+- **Dynamic Exclusion Zones:** Allows operations teams to define non-walkable barriers, temporary spill perimeters, staging buffer areas, and designated one-way forklift traffic corridors directly on the map.
+- **Export Standards:** Compatible with GeoJSON, Industry Foundation Classes (IFC 4.3), and glTF/GLB formats for cross-platform 3D visualization.
+
+### Module B: Warehouse Management (`/warehouse-management.html`)
+- **Primary Keyword:** Warehouse Management System
+- **Hierarchical Storage Geometry:** Tracks inventory down to discrete XYZ coordinates within racks, bays, shelves, and bins. Supports selective pallet racking, drive-in racks, cantilever configurations, and flow-rack systems.
+- **Volumetric & Weight Allocation:** Computes real-time cubic volume utilization (m³ / cu ft) and beam weight capacity ratings to prevent rack overload conditions.
+- **Dynamic Slotting Optimization:** Analyzes SKU pick frequency (Fast/Medium/Slow velocity classes) to recommend optimal bin reassignments close to packing stations, cutting deadhead travel distances.
+- **ERP Integration Pipeline:** Bidirectional API hooks for SAP EWM, Oracle NetSuite, Blue Yonder, and Manhattan WMS over secure REST/JSON and gRPC endpoints.
+
+### Module C: Indoor Navigation (`/indoor-navigation.html`)
+- **Primary Keyword:** Indoor Navigation Software
+- **Pathfinding Graph:** Translates walkable open areas into a dense Voronoi/navmesh graph. Executes modified A* algorithms factoring in turn penalties, speed profiles, and active obstacle avoidance.
+- **Traveling Salesperson Pick-Sequencing:** Groups multi-line orders and optimizes pick sequence order, minimizing total travel distance by up to 34% compared to standard serpentine routing.
+- **Sensor & Positioning Fusion:** Integrates with Bluetooth Low Energy (BLE) angle-of-arrival beacons, ultra-wideband (UWB) anchors, optical ceiling QR markers, and device inertial measurement units (IMU).
+- **Turn-by-Turn Guidance:** Renders visual breadcrumbs, heading directional arrows, and aisle entry warnings for handheld industrial terminals (Zebra, Honeywell) and worker tablet mounts.
+
+### Module D: Enterprise About & Architecture (`/about.html`)
+- **Primary Keyword:** Warehouse Technology Platform
+- **Spatial-First Philosophy:** Traditional WMS treat warehouses as relational rows in an SQL table. GREXON treats the facility as a geometric continuum where every item has an exact physical coordinate in Euclidean space.
+- **Data Integrity Standards:** Sub-centimeter spatial precision, deterministic routing reproducibility, and air-gapped deployment readiness for high-security defense and pharmaceutical distribution hubs.
+
+---
+
+## 3. Technical Specifications & Integrations
+
+| Feature | Specification |
+|---|---|
+| Map Vector Format | GeoJSON FeatureCollection / Custom Binary Navmesh |
+| Pathfinding Algorithm | Weighted Bidirectional A* with Turn Penalties & Congestion Costs |
+| Coordinate System | Metric Cartesian Local Origin (0,0,0 in millimeters) + WGS84 Geo-reference |
+| Supported Devices | Android Zebra/Honeywell Enterprise Scanners, iOS/iPadOS, WebGL Browsers |
+| Real-time Telemetry | WebSocket (WSS) 60 Hz location stream with Kalman filtering |
+| Identity & RBAC | OAuth2 / OIDC / SAML 2.0 with facility-scoped role permissions |
+
+---
+
+## 4. Frequently Asked Questions (FAQ)
+
+### What makes GREXON different from conventional WMS software?
+Conventional WMS systems store aisle and bin codes as static alphanumeric strings (e.g., A-12-04-B). They lack topological awareness of obstacles, travel distance, or physical clearance. GREXON pairs storage records with true spatial geometry, enabling real-time navigation, shortest-path calculation, and spatial density heatmaps.
+
+### Does GREXON require physical facility remodels or complex sensor arrays?
+No. GREXON starts with your existing CAD floor plans. For basic navigation and visual pick routing, workers can navigate using optical QR checkpoints or standard Wi-Fi trilateration. For high-precision automated AMR navigation, BLE or UWB beacons can be mapped into GREXON's coordinate matrix.
+
+### How does CAD drawing ingestion work?
+You upload an architectural DXF or DWG drawing. GREXON's vector interpreter identifies wall polygons, structural columns, and rack boundaries, converting them into an interactive digital twin with measurable dimensions in minutes.
+
+### Does GREXON support multi-floor facilities?
+GREXON is purpose-built for continuous industrial warehouse facilities, logistics hubs, and single-level distribution centers. All spatial hierarchies, routing algorithms, and inventory coordinates operate across unified horizontal facility geometry.
+
+---
+
+## 5. Architectural Footprint & Provenance
+- Organization: GREXON Systems
+- Ecosystem: 2026 Deep Systems
+- Repository: https://github.com/deep5devlopers/grexon
+- Canonical Site: https://deep5devlopers.github.io/grexon/
